@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="userList"
+            type="com.example.administrator.dongdongdemo.mvvmDemo.activity.bean.ListBean" />
+
+        <variable
+            name="imageUrls"
+            type="String" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{userList.name}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{!(userList.age &lt;10)?@color/colorPrimaryDark:0xFFFF0000}"
+            android:text="@{String.valueOf(userList.age)}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{userList.url}" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:imageUrl="@{userList.url}" />
+    </LinearLayout>
+</layout>
